@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register | E-Learning</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav.navbar {
+      background-color: #2c3e50;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #f1c40f;
+    }
+
+    /* Main content wrapper */
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* Register container */
+    .register-container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .register-container h2 {
+      margin-bottom: 25px;
+      color: #2c3e50;
+      font-weight: 700;
+      font-size: 28px;
+    }
+
+    form.register-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form.register-form input {
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    form.register-form input:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+
+    form.register-form button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 14px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form.register-form button:hover {
+      background-color: #1abc9c;
+    }
+
+    .login-link {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .login-link a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .register-container {
+        padding: 25px 20px;
+        width: 90%;
+      }
+      nav.navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 15px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">E-Learning</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section class="register-container" aria-label="Registration Form">
+      <h2>Create Your Account</h2>
+      <form class="register-form" action="register.php" method="post" novalidate>
+        <input type="text" name="username" placeholder="Enter username" required autocomplete="username" />
+        <input type="email" name="email" placeholder="Enter email" required autocomplete="email" />
+        <input type="password" name="password" placeholder="Enter password" required autocomplete="new-password" />
+        <button type="submit">Register</button>
+      </form>
+      <p class="login-link">
+        Already have an account? <a href="login.html">Login here</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

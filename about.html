@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Me - Interactive Page</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f4f6f8;
+    color: #333;
+  }
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #007BFF;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .tab {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background: #e9ecef;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+  }
+  .tab.active {
+    background: #007BFF;
+    color: white;
+  }
+  .tab-content {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+    animation: fadeIn 0.5s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  /* Skill bars */
+  .skill {
+    margin-bottom: 1rem;
+  }
+  .skill-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  .skill-bar {
+    background: #e9ecef;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 20px;
+  }
+  .skill-progress {
+    height: 100%;
+    background: #007BFF;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+  }
+  /* Counter section */
+  .counters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  .counter {
+    text-align: center;
+  }
+  .counter h3 {
+    font-size: 2.5rem;
+    color: #007BFF;
+    margin: 0;
+  }
+  .counter p {
+    margin: 0;
+    font-weight: 600;
+  }
+  /* Contact button */
+  .contact-btn {
+    display: block;
+    margin: 3rem auto 0 auto;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .contact-btn:hover {
+    background: #0056b3;
+  }
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+  }
+  .modal-close:hover {
+    color: #333;
+  }
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  button.submit-btn {
+    margin-top: 1.5rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  button.submit-btn:hover {
+    background: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>About Me</h1>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="bio">Biography</div>
+    <div class="tab" data-tab="skills">Skills</div>
+    <div class="tab" data-tab="experience">Experience</div>
+  </div>
+
+  <div id="bio" class="tab-content">
+    <p>Hello! I’m Tejas, a passionate web developer with a knack for creating interactive and user-friendly websites. I enjoy turning ideas into reality using modern web technologies.</p>
+    <p>With a background in computer science, I have experience in HTML, CSS, JavaScript, and backend development. I love learning new things and continuously improving my skills.</p>
+  </div>
+
+  <div id="skills" class="tab-content" style="display:none;">
+    <div class="skill">
+      <div class="skill-name">HTML & CSS</div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 0;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 0;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">React.js</div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 0;"></div></div>
+    </div>
+  </div>
+
+  <div id="experience" class="tab-content" style="display:none;">
+    <ul>
+      <li><strong>Internship at Skillcraft Technology:</strong> Developed Caesar Cipher algorithm program and gained hands-on experience.</li>
+      <li><strong>MERN Stack Project:</strong> Built a Speech-to-Text application with audio upload, transcription, and storage features.</li>
+      <li><strong>Freelance Web Developer:</strong> Created multiple client websites with interactive features and responsive design.</li>
+    </ul>
+  </div>
+
+  <div class="counters">
+    <div class="counter">
+      <h3 id="projects-count">0</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="counter">
+      <h3 id="clients-count">0</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="counter">
+      <h3 id="hours-count">0</h3>
+      <p>Hours of Coding</p>
+    </div>
+  </div>
+
+  <button class="contact-btn"></button>
+  <a href="contact.html" class="contact-btn">Contact Me</a>
+
+</div>
+
+<!-- Contact Modal -->
+
+
+<script>
+  // Tab functionality
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.style.display = 'none');
+
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).style.display = 'block';
+
+      if(tab.dataset.tab === 'skills') animateSkills();
+    });
+  });
+
+  // Animate skill bars
+  function animateSkills() {
+    const progresses = document.querySelectorAll('.skill-progress');
+    const skillWidths = ['90%', '85%', '75%']; // Example skill levels
+
+    progresses.forEach((bar, i) => {
+      bar.style.width = skillWidths[i];
+    });
+  }
+
+  // Animate counters
+  function animateCounter(id, target) {
+    let count = 0;
+    const speed = 30; // milliseconds per increment
+    const increment = Math.ceil(target / 100);
+
+    function updateCounter() {
+      count += increment;
+      if (count > target) count = target;
+      document.getElementById(id).innerText = count;
+      if (count < target) {
+        setTimeout(updateCounter, speed);
+      }
+    }
+    updateCounter();
+  }
+  // Start counters animation on page load
+  window.onload = () => {
+    animateCounter('projects-count', 120);
+    animateCounter('clients-count', 45);
+    animateCounter('hours-count', 3500);
+  };
+
+  // Modal open/close
+  const openBtn = document.getElementById('openContact');
+  const modal = document.getElementById('contactModal');
+  const closeBtn = document.getElementById('closeContact');
+
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  window.addEventListener('click', (e) => {
+    if(e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Contact form submission
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thank you for contacting me! I will get back to you soon.');
+    modal.style.display = 'none';
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>
