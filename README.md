@@ -31,7 +31,7 @@ Download or Clone this repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/elearning-platform.git
+git clone (https://github.com/Tejas143220/E-learning-platform-project.git)
 Move the project to your server folder (e.g., htdocs for XAMPP).
 
 Import the database file from /db/database.sql into phpMyAdmin.
