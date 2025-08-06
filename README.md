@@ -38,7 +38,7 @@ Import the database file from /db/database.sql into phpMyAdmin.
 
 Start Apache & MySQL from XAMPP.
 
-Open in browser: http://localhost/E-learning-platfomr-project
+Open in browser: http://localhost/bsc_project/index.html
 
 
 
