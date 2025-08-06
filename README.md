@@ -17,15 +17,6 @@ Backend: PHP
 
 Database: MySQL
 
-/project-folder
-│── /assets        # Images, icons, and media files
-│── /css           # Stylesheets
-│── /js            # JavaScript files
-│── /php           # PHP backend files
-│── /db            # Database scripts
-│── index.html     # Homepage
-│── README.md      # Project information
-
 Installation & Setup
 Download or Clone this repository:
 
